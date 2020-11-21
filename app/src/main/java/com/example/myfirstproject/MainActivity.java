@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     private EditText firstNumber;
@@ -21,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
         secondNumber=findViewById(R.id.secondNumber);
         buttonEnter=findViewById(R.id.buttonEnter);
         result=findViewById(R.id.result);
+        Toast.makeText(this,"OnCreate",Toast.LENGTH_SHORT).show();
         buttonEnter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -28,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
                 int b=Integer.parseInt(secondNumber.getText().toString());
                 int S=a+b;
                 result.setText(Integer.toString(a)+"+"+Integer.toString(b)+"="+Integer.toString(S));
+                Toast.makeText(MainActivity.this,Integer.toString(a)+"+"+Integer.toString(b)+"="+Integer.toString(S),Toast.LENGTH_SHORT).show();
             }
         });
     }
